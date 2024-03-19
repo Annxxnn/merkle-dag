@@ -17,6 +17,17 @@ type Object struct {
 	Data  []byte
 }
 
+type Link struct {
+	Name string
+	Hash []byte
+	Size int
+}
+
+type Object struct {
+	Links []Link
+	Data  []byte
+}
+
 func Add(store KVStore, node Node, h hash.Hash) []byte {
 	// 将节点数据写入到 KVStore 中
 	if node.Type() == FILE {
