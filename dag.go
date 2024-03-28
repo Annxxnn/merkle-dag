@@ -6,16 +6,16 @@ import (
 	"hash"
 )
 
-type Link struct {
-	Name string
-	Hash []byte
-	Size int
-}
+const (
+	LIST_LIMIT  = 2048
+	BLOCK_LIMIT = 256 * 1024
+)
 
-type Object struct {
-	Links []Link
-	Data  []byte
-}
+const (
+	BLOB = "blob"
+	LIST = "list"
+	TREE = "tree"
+)
 
 type Link struct {
 	Name string
